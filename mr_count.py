@@ -36,7 +36,6 @@ class MRWordFrequencyCount(MRJob):
         self.tfidf_dict = {}
 
     def mapper_middle(self, _, line):
-        #print('mapper_middle starts...')
         # split the user_id and body from source text file
         user_id, body = line.split(',')
         # set default dicts
@@ -81,10 +80,10 @@ class MRWordFrequencyCount(MRJob):
                 else:
                     pass
 
-        print('mapper_middle finishes....')
+        #print('mapper_middle finishes....')
 
     def mapper_final(self):
-        print('mapper_finall starts....')
+        #print('mapper_finall starts....')
 
         # calculate the idf values
         for user_id, user_dict in self.idf_dict.items():
